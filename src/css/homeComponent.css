@@ -1,0 +1,230 @@
+:root {
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --textshadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+}
+/* background: white url(../images/jackhiking.jpg); */
+
+button {
+  background: #ffc600;
+  border: 0;
+  padding: 10px 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* .wrapper */
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.top {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    'hero hero cta1'
+    'hero hero cta2';
+}
+
+.hero {
+  grid-area: hero;
+  min-height: 400px;
+  background: white url(../images/jackhiking.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.hero > * {
+  color: white;
+  text-shadow: var(--textshadow);
+  padding: 5px;
+}
+
+.cta {
+  background: yellow;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  font-family: 'Gloria Hallelujah', cursive;
+  box-shadow: var(--shadow);
+}
+
+.cta > p {
+  margin: 0;
+}
+
+/* .cta > ul {
+  list-style: '🐾';
+  text-indent: 1em;
+} */
+
+.cta1 {
+  grid-area: cta1;
+}
+
+.cta2 {
+  grid-area: cta2;
+}
+
+.shiba_fact {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+/* Navigation */
+.menu ul {
+  display: grid;
+  grid-gap: 10px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.menu li {
+  box-shadow: var(--shadow);
+}
+
+.menu a {
+  background: yellow;
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  color: var(--black);
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+[aria-controls='menu-list'] {
+  display: none;
+}
+
+/* Features! */
+
+.features {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.feature {
+  background: white;
+  padding: 10px;
+  border: 1px solid white;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.feature .icon {
+  font-size: 50px;
+}
+
+.jack {
+  background: white url(../images/jackcar.jpg);
+  background-size: cover;
+  background-position: 50% 30%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  font-size: 22px;
+  color: white;
+  text-shadow: var(--textshadow);
+}
+
+.rush {
+  background: white url(../images/rush01.jpg);
+  background-size: cover;
+  background-position: 50% 27%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  font-size: 22px;
+  color: white;
+  text-shadow: var(--textshadow);
+}
+
+.artemis {
+  background: white url(../images/artemis.jpg);
+  background-size: 460px 400px;
+  background-position: 50% 40%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  font-size: 22px;
+  color: white;
+  text-shadow: var(--textshadow);
+}
+
+.luna {
+  background: white url(../images/luna.jpg);
+  background-size: cover;
+  background-position: 50% 60%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  font-size: 22px;
+  color: white;
+  text-shadow: var(--textshadow);
+}
+
+@media (max-width: 700px) {
+  .top {
+    grid-template-areas:
+      'hero hero'
+      'cta1 cta2';
+  }
+}
+
+@media (max-width: 500px) {
+  .top {
+    grid-template-areas:
+      'hero'
+      'hero'
+      'cta1'
+      'cta2';
+  }
+}
+
+@media (max-width: 1000px) {
+  .menu {
+    order: -1;
+    perspective: 800px;
+  }
+  [aria-controls='menu-list'] {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .menu ul {
+    max-height: 0;
+    overflow: hidden;
+    transform: rotateX(90deg);
+    transition: all 0.5s;
+  }
+
+  [aria-expanded='true'] ~ ul {
+    display: grid;
+    max-height: 500px;
+    transform: rotateX(0);
+  }
+}
