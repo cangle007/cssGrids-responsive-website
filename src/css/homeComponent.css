@@ -52,7 +52,7 @@ img {
 }
 
 .cta {
-  background: yellow;
+  background: #00a096;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -64,11 +64,6 @@ img {
 .cta > p {
   margin: 0;
 }
-
-/* .cta > ul {
-  list-style: '🐾';
-  text-indent: 1em;
-} */
 
 .cta1 {
   grid-area: cta1;
@@ -97,7 +92,7 @@ img {
 }
 
 .menu a {
-  background: yellow;
+  background: #00a096;
   display: block;
   text-decoration: none;
   padding: 10px;
